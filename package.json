@@ -9,9 +9,16 @@
   "author": "John Dyer",
   "license": "MIT",
   "main": "react/index.js",
+  "types": "react/index.d.ts",
   "exports": {
-    ".": "./react/index.js",
-    "./react": "./react/index.js",
+    ".": {
+      "types": "./react/index.d.ts",
+      "default": "./react/index.js"
+    },
+    "./react": {
+      "types": "./react/index.d.ts",
+      "default": "./react/index.js"
+    },
     "./app": "./app/index.html"
   },
   "files": [
