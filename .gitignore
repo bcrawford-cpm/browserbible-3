@@ -10,3 +10,4 @@ app/content/texts/
 !app/content/texts/README.md
 **/node_modules/
 !**/node_modules/*.js
+package-lock.json

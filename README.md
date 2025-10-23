@@ -2,6 +2,8 @@
 
 Bible software that runs in the browser. See `changelog.md` for recent updates.
 
+**Now supports React integration!** See [react/README.md](react/README.md) for integration guide.
+
 ## Building Texts
 
 Before BrowserBible is ready for deployment, the texts that will be deployed with it must be built.  To build texts, first install the dependencies:
@@ -17,6 +19,30 @@ and then run:
 This will read the texts data from `input/` and build the files that BrowserBible will use to show and search texts and place them in `app/content/texts/`.
 
 Now you can open `app/index.html` in the browser.
+
+## React Integration
+
+BrowserBible v3 now supports integration into React applications. This is ideal if you're building a React app with Vite and want to embed Bible functionality.
+
+### Quick Start
+
+```jsx
+import { BrowserBible } from 'browserbible-3/react';
+
+function App() {
+  return (
+    <BrowserBible 
+      config={{
+        windows: [
+          { type: 'bible', data: { textid: 'ENGNAS', fragmentid: 'JN1_1' } }
+        ]
+      }}
+    />
+  );
+}
+```
+
+See the complete [React Integration Guide](react/README.md) for detailed instructions.
 
 ## Adding Bibles and other Texts
 
