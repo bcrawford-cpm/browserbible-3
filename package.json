@@ -1,19 +1,53 @@
 {
-  "name": "BrowserBible",
+  "name": "browserbible-3",
   "version": "3.6.5",
-  "description": "Bible software that runs in the browser.",
+  "description": "Bible software that runs in the browser. Supports standalone usage and React integration.",
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbiblesociety/browserbible-3"
   },
   "author": "John Dyer",
   "license": "MIT",
+  "main": "react/index.js",
+  "exports": {
+    ".": "./react/index.js",
+    "./react": "./react/index.js",
+    "./app": "./app/index.html"
+  },
+  "files": [
+    "app/",
+    "react/",
+    "README.md",
+    "LICENSE.txt"
+  ],
   "scripts": {
     "build:texts": "node tools/generate.js -i",
     "build:index": "node tools/create_texts_index.js",
     "build:deafbibles": "node tools/generatedeafbibles.js",
     "build:content": "npm run build:texts && npm run build:deafbibles && npm run build:index",
     "build": "node tools/builder.js"
+  },
+  "keywords": [
+    "bible",
+    "scripture",
+    "react",
+    "react-component",
+    "bible-study",
+    "greek",
+    "hebrew",
+    "biblical-languages"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "dependencies": {
     "base32": "0.0.6",
@@ -30,5 +64,7 @@
     "uglifycss": "0.0.20",
     "xregexp": "^3.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "prop-types": "^15.8.1"
+  }
 }
